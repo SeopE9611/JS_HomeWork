@@ -25,6 +25,16 @@
             select.addEventListener('change', (event) => { //select 이벤트 생성
                 const options = event.currentTarget.options;
                 const choice_list = [] //리스트 저장
+
+                for (const option of options) { // for of 반복문
+                    console.log(option.selected)
+                    if (option.selected) { // selected 속성 확인
+                        choice_list.push(option.textContent);
+                    }
+                }
+                // choice.textContent = `선택한상품 ${list.join('\n')}`
+                choice.textContent = `선택한상품 - ${choice_list.join(',')}`
+
             })
         });
 </script>
